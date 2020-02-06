@@ -1,25 +1,50 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import $ from 'jquery'
+
+class Chosen extends React.Component {
+  componentDidMount() {
+    this.$el = $(this.el);
+    // this.$el.chosen();
+
+    this.handleChange = this.handleChange.bind(this);
+    this.$el.on('change', this.handleChange);
+  }
+  
+  componentDidUpdate(prevProps) {
+    if (prevProps.children !== this.props.children) {
+      this.$el.trigger("chosen:updated");
+    }
+  }
+
+  componentWillUnmount() {
+    this.$el.off('change', this.handleChange);
+    this.$el.chosen('destroy');
+  }
+  
+  handleChange(e) {
+    console.log('-->self defin msg:', e.target.value)
+    this.props.onChange(e.target.value);
+  }
+
+  render() {
+    return (
+      <div>
+        <select className="Chosen-select" ref={el => this.el = el}>
+          {this.props.children}
+        </select>
+      </div>
+    );
+  }
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Chosen onChange={value => console.log(value)}>
+      <option>vanilla</option>
+      <option>chocolate</option>
+      <option>strawberry</option>
+    </Chosen>
   );
 }
 
