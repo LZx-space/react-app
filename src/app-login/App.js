@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import 'antd/dist/antd.css';
-import { Button, Checkbox, Form, Icon, Input, Layout } from 'antd';
+import { Button, Checkbox, Form, Icon, Input, Layout, message } from 'antd';
 import SimpleFooter from '../common/footer-simple/App';
+import RequestApi from '../common/RequestApi';
 
 const { Content } = Layout;
 
@@ -21,6 +22,12 @@ function Login(props) {
       if (!err) {
         console.log('Received values of form: ', values);
       }
+      RequestApi.post("/api/sessions", values).then((res) => {
+        console.log("--res-->", res)
+        message.info(JSON.stringify(res));
+      }).catch(function (error) {
+        message.info(error.message);
+      });
     });
   };
 
@@ -66,10 +73,10 @@ function Login(props) {
               })(<Checkbox className="login-form-remember">记住我</Checkbox>)}
               <a className="login-form-forgot" href="/#">
                 忘记密码
-            </a>
+              </a>
               <Button type="primary" htmlType="submit" className="login-form-button">
                 登录
-            </Button>
+              </Button>
               <a href="/#">注册!</a>
             </Form.Item>
           </Form>
