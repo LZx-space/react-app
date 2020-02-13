@@ -4,7 +4,7 @@ const RequestApi = Axios.create();
 RequestApi.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 // request interceptor
 RequestApi.interceptors.request.use((config) => {
-    if (config.method === 'post') {
+    if (config.method !== 'get') {
         config.data = Qs.stringify(config.data);
     }
     return config;
@@ -12,9 +12,11 @@ RequestApi.interceptors.request.use((config) => {
 // response interceptor
 RequestApi.interceptors.response.use(
     (response) => {
-        // Do something with response data
+        // 所有code非1的全部
         let data = response.data;
-        response.data = data.data;
+        if (data.code === 401 || data.code === 403) {
+            // 重定向到登录页面
+        }
         return response;
     }, (error) => {
         // Do something with response error

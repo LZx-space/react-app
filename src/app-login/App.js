@@ -23,10 +23,9 @@ function Login(props) {
         console.log('Received values of form: ', values);
       }
       RequestApi.post("/api/sessions", values).then((res) => {
-        console.log("--res-->", res)
-        message.info(JSON.stringify(res));
+        message.info("-res->", JSON.stringify(res));
       }).catch(function (error) {
-        message.info(error.message);
+        message.info("-err->", error.message);
       });
     });
   };
@@ -50,8 +49,9 @@ function Login(props) {
               })(
                 <Input
                   prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                  placeholder="username"
-                />,
+                  placeholder="用户名"
+                  size="large" 
+                />
               )}
             </Form.Item>
             <Form.Item validateStatus={passwordError ? 'error' : ''} help={passwordError || ''}>
@@ -62,8 +62,9 @@ function Login(props) {
                 <Input
                   prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
                   type="password"
-                  placeholder="password"
-                />,
+                  size="large" 
+                  placeholder="密码"
+                />
               )}
             </Form.Item>
             <Form.Item>
@@ -74,7 +75,7 @@ function Login(props) {
               <a className="login-form-forgot" href="/#">
                 忘记密码
               </a>
-              <Button type="primary" htmlType="submit" className="login-form-button">
+              <Button type="primary" size="large" htmlType="submit" className="login-form-button">
                 登录
               </Button>
               <a href="/#">注册!</a>

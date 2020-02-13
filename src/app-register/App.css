@@ -1,34 +1,26 @@
-.App {
-  text-align: center;
+
+.content {
   width: 1024px;
-  margin: 0 auto;
+  margin: auto;
 }
-.login-container {
+.register-title {
+  font-size: larger;
+  font-weight: bold;
+  line-height: 40px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.register-container {
   margin: 0 auto;
-  width: 400px;
+  width: 800px;
   padding: 30px 50px 50px 50px;
   border: 1px solid #d9d9d9;
   border-radius: 4px;
   margin-top: 30px;
 }
-.login-title {
+.register-title {
   font-size: larger;
   font-weight: bold;
   line-height: 40px;
   margin-bottom: 24px;
-}
-.login-form {
-  max-width: 300px;
-}
-.ant-form-explain {
-  float: left;
-}
-.login-form-remember {
-  float: left;
-}
-.login-form-forgot {
-  float: right;
-}
-.login-form-button {
-  width: 100%;
 }
