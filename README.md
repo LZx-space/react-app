@@ -1,8 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-### `已修改为多页应用`
+### 已修改为多页应用
 
-添加[/config/mpa.config.js]用于获取入口和对应每个页面的HtmlWebpackPlugin对象  
-关于webpack.config.js涉及webpack如下配置项：[entry] [output.filename] [plugins]或其内部子项，查看代码中行注释为
+添加 `/config/mpa.config.js` 用于获取入口和对应每个页面的`HtmlWebpackPlugin`对象  
+关于webpack.config.js涉及webpack如下配置项：`entry` `output.filename` `plugins`或其内部子项，查看代码中行注释为
 `// ↓↓↓↓↓↓↓↓↓↓↓`的地方
 
 ## Available Scripts
