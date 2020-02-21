@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import 'antd/dist/antd.css';
 import { Button, Checkbox, Form, Icon, Input, Tooltip, Col, Select, Layout, message, Modal } from 'antd';
-import SimpleFooter from '../../common/footer-simple/App';
-import RequestApi from '../../common/RequestApi';
+import SimpleFooter from '../../common-component/footer-simple/App';
+import RequestApi from '../../common-assets/js/RequestApi';
 
 const { Content } = Layout;
 const { Option } = Select;

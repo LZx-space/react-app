@@ -138,7 +138,6 @@ module.exports = function (webpackEnv) {
 
   // ↓↓↓↓↓↓↓↓↓↓↓--------------- LZx add ------------------------------------
   const mpaConfig = getMpaConfig(isEnvDevelopment, isEnvProduction);
-  console.log('------->', mpaConfig)
   // ↑↑↑↑↑↑↑↑↑↑↑--- end
 
   return {

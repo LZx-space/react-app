@@ -1,6 +1,7 @@
 import Axios from 'axios';
 import Qs from 'qs';
 const RequestApi = Axios.create();
+// 必须，否则一些浏览器和组件将无法工作
 RequestApi.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 // request interceptor
 RequestApi.interceptors.request.use((config) => {

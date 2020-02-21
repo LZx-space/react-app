@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import 'antd/dist/antd.css';
 import { Button, Checkbox, Form, Icon, Input, Layout, message } from 'antd';
-import SimpleFooter from '../../common/footer-simple/App';
-import RequestApi from '../../common/RequestApi';
+import SimpleFooter from '../../common-component/footer-simple/App';
+import RequestApi from '../../common-assets/js/RequestApi';
 
 const { Content } = Layout;
 
@@ -34,7 +34,7 @@ function Login(props) {
   const usernameError = isFieldTouched('username') && getFieldError('username');
   const passwordError = isFieldTouched('password') && getFieldError('password');
   return (
-    <Layout style={{background: '#fff', height: scrollHeight}}>
+    <Layout className="bg" style={{ background: '#fff', height: scrollHeight }}>
       <Content className="content">
         <div className="login-container">
           <div className="login-title">
@@ -50,7 +50,7 @@ function Login(props) {
                 <Input
                   prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
                   placeholder="用户名"
-                  size="large" 
+                  size="large"
                 />
               )}
             </Form.Item>
@@ -62,7 +62,7 @@ function Login(props) {
                 <Input
                   prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
                   type="password"
-                  size="large" 
+                  size="large"
                   placeholder="密码"
                 />
               )}
@@ -78,12 +78,12 @@ function Login(props) {
               <Button type="primary" size="large" htmlType="submit" className="login-form-button">
                 登录
               </Button>
-              <a href="/#">注册!</a>
+              <a href="./register.html">注册!</a>
             </Form.Item>
           </Form>
         </div>
       </Content>
-      <SimpleFooter />
+      <SimpleFooter className="footer-simple login-footer" />
     </Layout>
   );
 }

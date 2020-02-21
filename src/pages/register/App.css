@@ -11,12 +11,13 @@
   text-align: center;
 }
 .register-container {
-  margin: 0 auto;
+  margin: 8px auto;
   width: 800px;
   padding: 30px 50px 50px 50px;
   border: 1px solid #d9d9d9;
   border-radius: 4px;
-  margin-top: 30px;
+  box-shadow: 0 4px 6px rgba(224,231,231,.76);
+  margin-top: 50px;
 }
 .register-title {
   font-size: larger;

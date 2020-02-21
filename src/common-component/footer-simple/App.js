@@ -7,7 +7,7 @@ const { Footer } = Layout;
 
 function SimpleFooter(props) {
   return (
-    <Footer className="footer-simple">©2020 Created by LZx</Footer>
+    <Footer className={props.className ? props.className : "footer-simple"} style={props.footerClass}>©2020 Created by LZx</Footer>
   );
 }
 
