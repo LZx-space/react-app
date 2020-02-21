@@ -1,3 +1,4 @@
+'use strict';
 // 多页应用，入口配置和HtmlPlugin设置
 const glob = require('glob');
 const paths = require('./paths');
