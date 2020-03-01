@@ -3,7 +3,7 @@ import './App.css';
 import 'antd/dist/antd.css';
 import { Button, Checkbox, Form, Icon, Input, Tooltip, Col, Select, Layout, message, Modal } from 'antd';
 import SimpleFooter from '../../common-components/footer-simple/App';
-import RequestApi from '../../common-utils/RequestApi';
+import RequestApi from '../../common-utils/requestApi';
 
 const { Content } = Layout;
 const { Option } = Select;
