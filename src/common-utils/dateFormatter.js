@@ -2,7 +2,7 @@
  * 格式化时间为yyyy/MM/dd HH:mm:dd
  * @param {Date} date
  */
-export function ToDefaultLocalString(date) {
+export function toDefaultLocalString(date) {
     return new Intl.DateTimeFormat('cn', {
         year: 'numeric',
         month: '2-digit',
@@ -18,7 +18,7 @@ export function ToDefaultLocalString(date) {
  * 格式化时间为yyyy/MM/dd
  * @param {Date} date
  */
-export function ToDefaultLocalDateString(date) {
+export function toDefaultLocalDateString(date) {
     return new Intl.DateTimeFormat('cn', {
         year: 'numeric',
         month: '2-digit',
@@ -30,7 +30,7 @@ export function ToDefaultLocalDateString(date) {
  * 格式化时间为HH:mm:ss
  * @param {Date} date
  */
-export function ToDefaultLocalTimeString(date) {
+export function toDefaultLocalTimeString(date) {
     return new Intl.DateTimeFormat('cn', {
         hour: '2-digit',
         minute: '2-digit',
